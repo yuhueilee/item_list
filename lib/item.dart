@@ -10,6 +10,8 @@ class Item extends StatefulWidget {
 }
 
 class _ItemState extends State<Item> {
+  var _pressedIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return _buildSuggestions(widget.itemCount);
@@ -26,11 +28,23 @@ class _ItemState extends State<Item> {
   }
 
   Widget _buildRow(int index, Color color) {
-    final String word = index.toString() + '. 點擊數量';
+    final String word = index.toString() + '. 點擊數量' + _pressedIndex.toString();
 
     return ListTile(
       title: Text(word),
       tileColor: color,
+      trailing: ElevatedButton(
+        child: const Text('點擊 + 1'),
+        onPressed: onPressed,
+        style: ElevatedButton.styleFrom(
+            primary: Colors.white, onPrimary: Colors.black),
+      ),
     );
+  }
+
+  void onPressed() {
+    setState(() {
+      _pressedIndex += 1;
+    });
   }
 }
