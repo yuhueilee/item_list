@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class Item extends StatefulWidget {
+class List extends StatefulWidget {
   final int itemCount;
 
-  const Item({Key? key, required this.itemCount}) : super(key: key);
+  const List({Key? key, required this.itemCount}) : super(key: key);
 
   @override
-  State<Item> createState() => _ItemState();
+  State<List> createState() => _ListState();
 }
 
-class _ItemState extends State<Item> {
+class _ListState extends State<List> {
   var _pressedIndex = 0;
 
   @override

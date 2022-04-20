@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:item_list/item.dart';
+import 'package:item_list/list.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
           centerTitle: false,
           title: const Text('面試題目'),
         ),
-        body: const Item(
+        body: const List(
           itemCount: 10,
         ),
       ),
