@@ -13,16 +13,13 @@ class List extends StatefulWidget {
 class _ListState extends State<List> {
   @override
   Widget build(BuildContext context) {
-    return _buildSuggestions(widget.itemCount);
-  }
-
-  Widget _buildSuggestions(int itemCount) {
     return ListView.builder(
-        itemCount: itemCount,
-        itemBuilder: ((context, index) {
-          final Color color =
-              Colors.primaries[(index + 1) % Colors.primaries.length];
-          return Item(index: index, color: color);
-        }));
+      itemCount: widget.itemCount,
+      itemBuilder: ((context, index) {
+        final Color color =
+            Colors.primaries[(index + 1) % Colors.primaries.length];
+        return Item(index: index, color: color);
+      }),
+    );
   }
 }
