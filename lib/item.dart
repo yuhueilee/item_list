@@ -33,6 +33,7 @@ class _ItemState extends State<Item> {
         style: ElevatedButton.styleFrom(
             primary: Colors.white, onPrimary: Colors.black),
       ),
+      contentPadding: const EdgeInsets.all(7),
     );
   }
 }
