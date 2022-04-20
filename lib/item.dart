@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class Item extends StatefulWidget {
-  const Item({Key? key}) : super(key: key);
+  final int itemCount;
+
+  const Item({Key? key, required this.itemCount}) : super(key: key);
 
   @override
   State<Item> createState() => _ItemState();
@@ -10,12 +12,12 @@ class Item extends StatefulWidget {
 class _ItemState extends State<Item> {
   @override
   Widget build(BuildContext context) {
-    return _buildSuggestions();
+    return _buildSuggestions(widget.itemCount);
   }
 
-  Widget _buildSuggestions() {
+  Widget _buildSuggestions(int itemCount) {
     return ListView.builder(
-        itemCount: 10,
+        itemCount: itemCount,
         itemBuilder: ((context, index) {
           final Color color =
               Colors.primaries[(index + 1) % Colors.primaries.length];

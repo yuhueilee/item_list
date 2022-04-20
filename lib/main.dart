@@ -17,7 +17,9 @@ class MyApp extends StatelessWidget {
           centerTitle: false,
           title: const Text('面試題目'),
         ),
-        body: const Item(),
+        body: const Item(
+          itemCount: 10,
+        ),
       ),
     );
   }
